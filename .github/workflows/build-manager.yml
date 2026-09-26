@@ -113,6 +113,12 @@ jobs:
     with:
       target: ${{ matrix.target }}
       os: ${{ matrix.os }}
+      # ksud.yml defaults pack_lkm to true, which copies the .ko modules built by
+      # build-lkm into userspace/ksud/bin/. That LKM bootstrap exists for GKI
+      # devices where KernelSU must be loaded as a module. This device is non-GKI
+      # 4.19 with KernelSU built in, so it is unused - and since build-lkm is
+      # disabled above, the step would fail on missing artifacts.
+      pack_lkm: false
 
   build-manager:
     needs: [prepare]
