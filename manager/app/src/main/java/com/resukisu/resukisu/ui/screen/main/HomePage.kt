@@ -189,45 +189,8 @@ fun HomePage(
         ) {
                 // 状态卡片
                 if (uiState.isCoreDataLoaded) {
-                    if (uiState.systemStatus.isManager && !uiState.systemStatus.isFullFeatured) {
-                        if ((uiState.systemStatus.kernelUAPIVersion
-                                ?: 1) > uiState.systemStatus.managerUAPIVersion
-                        ) {
-                            WarningCard(
-                                message = stringResource(R.string.require_manager_version),
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.TwoTone.Error,
-                                        contentDescription = null,
-                                        tint = MaterialTheme.colorScheme.onErrorContainer,
-                                        modifier = Modifier.size(18.dp)
-                                    )
-                                },
-                                onClick = {
-                                    navigator.push(Route.Install(preselectedKernelUri = null))
-                                }
-                            )
-                        } else {
-                            WarningCard(
-                                message = if (uiState.systemStatus.lkmMode == true)
-                                    stringResource(R.string.require_kernel_version)
-                                else
-                                    stringResource(R.string.require_kernel_version_gki),
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.TwoTone.Error,
-                                        contentDescription = null,
-                                        tint = MaterialTheme.colorScheme.onErrorContainer,
-                                        modifier = Modifier.size(18.dp)
-                                    )
-                                },
-                                onClick = {
-                                    navigator.push(Route.Install(preselectedKernelUri = null))
-                                }
-                            )
-                        }
-                        Spacer(modifier = Modifier.height(10.dp))
-                    }
+                    // version check REMOVED (pinned build): the UAPI version banner is not shown
+                    // so a manager newer than the kernel keeps working without the blocking prompt.
 
                     // 警告信息
                     if (BuildConfig.DEBUG) {
