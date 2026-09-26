@@ -412,9 +412,17 @@ jobs:
       - name: Setup need_upload
         id: need_upload
         run: |
-          if [ ! -z "${{ secrets.BOT_TOKEN }}" ]; then
+          # Never upload from a fork: only the upstream repository may publish.
+          # GitHub resolves secrets.*/vars.* from THIS repository, so a fork has no
+          # BOT_TOKEN and would skip anyway - but make that structural rather than
+          # dependent on an absent secret, so a fork can never post to the upstream bot.
+          if [ "${{ github.repository }}" != "ReSukiSU/ReSukiSU" ]; then
+            echo "UPLOAD=false  (repository is ${{ github.repository }}, not the upstream)"
+            echo "UPLOAD=false" >> $GITHUB_OUTPUT
+          elif [ ! -z "${{ secrets.BOT_TOKEN }}" ]; then
             echo "UPLOAD=true" >> $GITHUB_OUTPUT
           else
+            echo "UPLOAD=false  (no BOT_TOKEN configured)"
             echo "UPLOAD=false" >> $GITHUB_OUTPUT
           fi
 
