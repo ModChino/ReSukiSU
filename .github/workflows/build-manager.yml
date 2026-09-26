@@ -366,6 +366,47 @@ jobs:
             -S "$SIGN_KEY_PASSWORD" \
             --strip
 
+      - name: Verify the produced APKs are actually signed
+        shell: bash
+        run: |
+          set -euo pipefail
+          APKSIGNER=$(command -v apksigner || true)
+          if [ -z "$APKSIGNER" ] && [ -n "${ANDROID_SDK_ROOT:-}" ]; then
+            APKSIGNER=$(find "$ANDROID_SDK_ROOT/build-tools" -name apksigner -type f | sort | tail -1)
+          fi
+          test -n "$APKSIGNER" || { echo "::error::apksigner not found"; exit 1; }
+          echo "apksigner: $APKSIGNER"
+          shopt -s nullglob
+          apks=(dist/*.apk)
+          [ ${#apks[@]} -gt 0 ] || { echo "::error::no APK in dist/"; exit 1; }
+          fail=0
+          for apk in "${apks[@]}"; do
+            echo "--- $apk ($(stat -c%s "$apk") B)"
+            if "$APKSIGNER" verify --print-certs "$apk" > /tmp/v.txt 2>&1; then
+              grep -m1 -i 'Signer #1 certificate DN' /tmp/v.txt || true
+            else
+              echo "::error::$apk is NOT signed (apksigner verify failed)"
+              sed 's/^/    /' /tmp/v.txt || true
+              fail=1
+            fi
+          done
+          # Second, independent lock: a v2/v3 signing block must sit between the file
+          # entries and the central directory, so the EOCD's recorded central-directory
+          # offset has to be AFTER the first central-directory header.
+          python3 - "${apks[@]}" <<'PY'
+          import struct, sys
+          for p in sys.argv[1:]:
+              d = open(p, 'rb').read()
+              eocd = d.rfind(b'PK\x05\x06')
+              cd_declared = struct.unpack_from('<I', d, eocd + 16)[0]
+              cd_actual = d.find(b'PK\x01\x02')
+              gap = cd_declared - cd_actual
+              print('  %-58s gap=%d' % (p.split('/')[-1], gap))
+              if gap <= 0:
+                  print('::error::%s has no APK Signing Block (gap=%d)' % (p, gap))
+                  sys.exit(1)
+          PY
+
       - name: Delete gradle build
         uses: GeekyEggo/delete-artifact@v6
         with:
