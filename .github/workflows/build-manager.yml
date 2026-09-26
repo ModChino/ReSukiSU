@@ -17,11 +17,6 @@ on:
   pull_request:
   workflow_call:
 
-# Resolved once here because secrets.* is not available in a job-level `if:`.
-# Publishing is upstream-only: a fork can never post to the upstream bot.
-env:
-  UPLOAD: ${{ github.repository == 'ReSukiSU/ReSukiSU' && secrets.BOT_TOKEN != '' }}
-
 jobs:
   prepare:
     runs-on: ubuntu-latest
@@ -89,12 +84,13 @@ jobs:
           echo "spoofed_package_name=$SPOOFED_PACKAGE_NAME" >> $GITHUB_OUTPUT
 
   build-lkm:
-    # DISABLED: this builds 16 Loadable Kernel Module variants (android12-5.10
-    # through android17-6.18, arm64 + x86_64) for GKI kernels. The target device
-    # is a non-GKI 4.19 kernel with KernelSU built in, so none of them can be
-    # used, and repack-manager does not consume them either. Re-enable by
-    # replacing this line with the original `needs: prepare` + `uses:` pair.
+    # DISABLED (if: false): builds 16 Loadable Kernel Module variants
+    # (android12-5.10 .. android17-6.18, arm64 + x86_64) for GKI kernels. The
+    # target device is a non-GKI 4.19 kernel with KernelSU built in, so no .ko
+    # can ever be loaded, and repack-manager does not consume them. Re-enable by
+    # deleting the `if:` line below.
     if: false
+    uses: ./.github/workflows/build-lkm.yml
     with:
       expected_pr_build_size: ${{ needs.prepare.outputs.expected_size || '' }}
       expected_pr_build_hash: ${{ needs.prepare.outputs.expected_hash || '' }}
@@ -380,7 +376,12 @@ jobs:
     # Only needed to feed the Telegram uploader. Building it means cloning tdlib
     # recursively and compiling it, so skip it outright when there is nothing to
     # upload (always the case in a fork - see the top-level UPLOAD env).
-    if: ${{ env.UPLOAD == 'true' }}
+    # DISABLED (if: false): builds tdlib just to feed the Telegram uploader.
+    # This fork must never publish, and the job is pure cost here (recursive
+    # tdlib clone + compile). The upstream expression was
+    #   if: github.repository == 'ReSukiSU/ReSukiSU'
+    # Delete the line below to restore it.
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -417,7 +418,12 @@ jobs:
 
   upload-telegram:
     needs: [repack-manager, telegram-bot-api]
-    if: ${{ env.UPLOAD == 'true' && github.event_name != 'pull_request' && github.event_name != 'workflow_call' }}
+    # DISABLED (if: false): never publish from this fork. The upstream expression
+    # was (keeping its original formatting, since `secrets.BOT_TOKEN` cannot be
+    # tested in a job-level `if:`):
+    #   if: github.repository == 'ReSukiSU/ReSukiSU' && github.event_name != 'pull_request' && github.event_name != 'workflow_call'
+    # The step-level BOT_TOKEN check inside the job is left intact as a second lock.
+    if: false
     runs-on: ubuntu-latest
     strategy:
       matrix:
