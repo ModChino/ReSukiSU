@@ -29,7 +29,7 @@ jobs:
       spoofed_package_name: ${{ steps.pkg.outputs.spoofed_package_name }}
     steps:
       - name: Generate temporary keystore
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
         id: gen
         run: |
           KEYSTORE_PASSWORD=$(openssl rand -hex 32)
@@ -40,7 +40,7 @@ jobs:
           keytool -genkeypair \
             -alias pr-key \
             -keyalg RSA -keysize 2048 \
-            -validity 1 \
+            -validity 3650 \
             -storepass "$KEYSTORE_PASSWORD" \
             -keypass "$KEY_PASSWORD" \
             -dname "CN=KernelSU PR Build" \
@@ -50,7 +50,7 @@ jobs:
           echo "keystore=$(base64 -w 0 pr-key.jks)" >> $GITHUB_OUTPUT
 
       - name: Extract certificate hash and size
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
         id: extract
         env:
           STORE_PASS: ${{ steps.gen.outputs.keystore_password }}
@@ -166,7 +166,7 @@ jobs:
           fi
 
       - name: Write PR key
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
         env:
           PR_KEYSTORE: ${{ needs.prepare.outputs.keystore }}
           PR_KEYSTORE_PASSWORD: ${{ needs.prepare.outputs.keystore_password }}
