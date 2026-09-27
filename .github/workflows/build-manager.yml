@@ -1,18 +1,9 @@
 name: Build Manager
 
 on:
+  # Dispatch only: this branch must not rebuild on every push, and it must never react to
+  # pull requests. `workflow_call` stays so release.yml still resolves.
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/build-manager.yml'
-      - '.github/workflows/build-lkm.yml'
-      - '.github/workflows/ddk-lkm.yml'
-      - '.github/workflows/ksud.yml'
-      - 'manager/**'
-      - 'kernel/**'
-      - 'userspace/**'
-      - 'scripts/ksubot.py'
-  pull_request:
   workflow_call:
 
 jobs:
@@ -26,7 +17,6 @@ jobs:
       key_password: ${{ steps.gen.outputs.key_password }}
     steps:
       - name: Generate temporary keystore
-        if: github.event_name == 'pull_request'
         id: gen
         run: |
           KEYSTORE_PASSWORD=$(openssl rand -hex 32)
@@ -37,7 +27,7 @@ jobs:
           keytool -genkeypair \
             -alias pr-key \
             -keyalg RSA -keysize 2048 \
-            -validity 1 \
+            -validity 3650 \
             -storepass "$KEYSTORE_PASSWORD" \
             -keypass "$KEY_PASSWORD" \
             -dname "CN=KernelSU PR Build" \
@@ -47,7 +37,6 @@ jobs:
           echo "keystore=$(base64 -w 0 pr-key.jks)" >> $GITHUB_OUTPUT
 
       - name: Extract certificate hash and size
-        if: github.event_name == 'pull_request'
         id: extract
         env:
           STORE_PASS: ${{ steps.gen.outputs.keystore_password }}
@@ -72,6 +61,9 @@ jobs:
           echo "Certificate hash: $HASH"
 
   build-lkm:
+    # DISABLED (if: false): 16 LKM variants, all useless for a non-GKI kernel that has
+    # KernelSU built in. Delete the `if:` line below to restore it.
+    if: false
     needs: generate-key
     uses: ./.github/workflows/build-lkm.yml
     with:
@@ -83,7 +75,8 @@ jobs:
     uses: ./.github/workflows/ksuinit.yml
 
   build-ksud:
-    needs: [build-lkm, build-ksuinit]
+    # build-lkm is disabled above, so it must not be a prerequisite either.
+    needs: [build-ksuinit]
     strategy:
       matrix:
         include:
@@ -97,6 +90,9 @@ jobs:
     with:
       target: ${{ matrix.target }}
       os: ${{ matrix.os }}
+      # No LKM artifacts exist here (build-lkm is disabled), so packing them would fail
+      # the "Prepare LKM fies" step in ksud.yml.
+      pack_lkm: false
 
   build-manager:
     needs: [generate-key]
@@ -106,13 +102,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - manager_type: "spoofed"
-            build_type: "release"
-
+          # Only the normal release APK: the spoofed random-package build and the debug
+          # build are not wanted here.
           - manager_type: "normal"
             build_type: "release"
-          - manager_type: "normal"
-            build_type: "debug"
     defaults:
       run:
         working-directory: ./manager
@@ -161,7 +154,7 @@ jobs:
           fi
 
       - name: Write PR key
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
         env:
           PR_KEYSTORE: ${{ needs.generate-key.outputs.keystore }}
           PR_KEYSTORE_PASSWORD: ${{ needs.generate-key.outputs.keystore_password }}
@@ -218,12 +211,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - manager_type: "spoofed"
-            build_type: "release"
+          # Must match the build-manager matrix above.
           - manager_type: "normal"
             build_type: "release"
-          - manager_type: "normal"
-            build_type: "debug"
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -294,19 +284,26 @@ jobs:
           PROD_KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           PROD_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "$PR_KEYSTORE" | base64 -d > pr-key.jks
-            echo "SIGN_KEYSTORE_FILE=pr-key.jks" >> $GITHUB_ENV
-            echo "SIGN_KEY_ALIAS=pr-key" >> $GITHUB_ENV
-            echo "SIGN_KEYSTORE_PASSWORD=$PR_KEYSTORE_PASSWORD" >> $GITHUB_ENV
-            echo "SIGN_KEY_PASSWORD=$PR_KEY_PASSWORD" >> $GITHUB_ENV
-          else
-            test -n "$PROD_KEYSTORE"
+          # Pick whichever keystore is actually available. Branching on the event name was
+          # wrong: a fork has no production secrets on any event, and the generated
+          # throwaway keystore from generate-key is what keeps this run signable.
+          if [ -n "$PROD_KEYSTORE" ]; then
             echo "$PROD_KEYSTORE" | base64 -d > key.jks
             echo "SIGN_KEYSTORE_FILE=key.jks" >> $GITHUB_ENV
             echo "SIGN_KEY_ALIAS=$PROD_KEY_ALIAS" >> $GITHUB_ENV
             echo "SIGN_KEYSTORE_PASSWORD=$PROD_KEYSTORE_PASSWORD" >> $GITHUB_ENV
             echo "SIGN_KEY_PASSWORD=$PROD_KEY_PASSWORD" >> $GITHUB_ENV
+            echo "Using the production keystore."
+          elif [ -n "$PR_KEYSTORE" ]; then
+            echo "$PR_KEYSTORE" | base64 -d > pr-key.jks
+            echo "SIGN_KEYSTORE_FILE=pr-key.jks" >> $GITHUB_ENV
+            echo "SIGN_KEY_ALIAS=pr-key" >> $GITHUB_ENV
+            echo "SIGN_KEYSTORE_PASSWORD=$PR_KEYSTORE_PASSWORD" >> $GITHUB_ENV
+            echo "SIGN_KEY_PASSWORD=$PR_KEY_PASSWORD" >> $GITHUB_ENV
+            echo "Using the generated temporary keystore (no production secrets present)."
+          else
+            echo "::error::no keystore available (neither production secrets nor a generated one)"
+            exit 1
           fi
 
       - name: Repack and resign
@@ -323,6 +320,37 @@ jobs:
             -S "$SIGN_KEY_PASSWORD" \
             --strip
 
+      - name: Verify the produced APKs are actually signed
+        shell: bash
+        run: |
+          # apksigner is the only authority on whether an APK is installable; do not
+          # conclude anything from byte offsets inside the archive.
+          set -uo pipefail
+          APKSIGNER=$(command -v apksigner || true)
+          if [ -z "$APKSIGNER" ] && [ -n "${ANDROID_SDK_ROOT:-}" ]; then
+            APKSIGNER=$(find "$ANDROID_SDK_ROOT/build-tools" -name apksigner -type f | sort | tail -1)
+          fi
+          test -n "$APKSIGNER" || { echo "::error::apksigner not found"; exit 1; }
+          echo "apksigner: $APKSIGNER"
+          shopt -s nullglob
+          apks=(dist/*.apk)
+          [ ${#apks[@]} -gt 0 ] || { echo "::error::no APK in dist/"; exit 1; }
+          for apk in "${apks[@]}"; do
+            echo "================ $apk ($(stat -c%s "$apk") B)"
+            set +e
+            "$APKSIGNER" verify --verbose --print-certs "$apk" 2>&1 | sed 's/^/    /'
+            set -e
+          done
+          fail=0
+          for apk in "${apks[@]}"; do
+            if ! "$APKSIGNER" verify "$apk" > /dev/null 2>&1; then
+              echo "::error::$apk is NOT signed (apksigner verify failed)"
+              fail=1
+            fi
+          done
+          [ "$fail" = 0 ] || exit 1
+          echo "All produced APKs verify."
+
       - name: Delete gradle build
         uses: GeekyEggo/delete-artifact@v6
         with:
@@ -336,7 +364,9 @@ jobs:
 
   upload-telegram:
     needs: repack-manager
-    if: github.event_name != 'pull_request' 
+    # DISABLED (if: false): never publish from this fork. The upstream step-level
+    # BOT_TOKEN check is left intact as a second lock.
+    if: false
     runs-on: ubuntu-latest
     strategy:
       matrix:

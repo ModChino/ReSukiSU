@@ -69,6 +69,8 @@ object ManagerUpdateRepository {
         supportedAbis: List<String> = Build.SUPPORTED_ABIS.toList(),
         currentVersionCode: Int = BuildConfig.VERSION_CODE,
     ): ManagerUpdateInfo? {
+        // Pinned build: the manager version is fixed on purpose, never offer an update.
+        return null
         val release = requestJson("https://api.github.com/repos/$REPOSITORY/releases/latest")
             ?: return null
         val changelog = release.optString("body")
@@ -98,6 +100,8 @@ object ManagerUpdateRepository {
         supportedAbis: List<String> = Build.SUPPORTED_ABIS.toList(),
         currentVersionCode: Int = BuildConfig.VERSION_CODE,
     ): ManagerUpdateInfo? {
+        // Pinned build: no beta channel either.
+        return null
         val workflowRuns = requestJson(
             "https://api.github.com/repos/$REPOSITORY/actions/workflows/$WORKFLOW_FILE/runs" +
                     "?branch=$BRANCH&status=success&per_page=1&event=push"

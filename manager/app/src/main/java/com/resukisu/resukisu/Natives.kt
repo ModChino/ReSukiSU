@@ -217,7 +217,9 @@ object Natives {
     }
 
     fun requireNewKernel(): Boolean {
-        return (version != -1 && version < MINIMAL_SUPPORTED_KERNEL) || checkUAPIMismatch()
+        // Pinned build: this manager and the installed kernel are built from the same
+        // revision, so there is no version/UAPI pair to compare and nothing to nag about.
+        return false
     }
 
     @Immutable

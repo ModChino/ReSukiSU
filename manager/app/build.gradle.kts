@@ -119,6 +119,9 @@ android {
     buildToolsVersion = androidBuildToolsVersion
 
     defaultConfig {
+        // Distinct install id, same signature and code: lets this pinned manager live next to
+        // the official one, which is what performs the one-time dynamic-manager grant.
+        applicationId = "com.resukisu.resukisu.pin"
         minSdk = androidMinSdkVersion
         targetSdk = androidTargetSdkVersion
         versionCode = managerVersionCode
