@@ -42,7 +42,11 @@ jobs:
     - name: Prepare ksuinit
       if: ${{ inputs.pack_ksuinit }}
       run: |
-        mv ksuinit/*/release/ksuinit ./userspace/ksud/bin/aarch64/
+        # The artifact keeps whatever path upload-artifact chose as its root, so locate the
+        # binary instead of guessing the layout ("ksuinit/*/release/ksuinit" matched nothing).
+        KSUINIT=$(find ksuinit -type f -name ksuinit | head -n 1)
+        test -n "$KSUINIT"
+        cp -f "$KSUINIT" ./userspace/ksud/bin/aarch64/
      
     - name: Setup Rust toolchain
       uses: dtolnay/rust-toolchain@stable

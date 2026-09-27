@@ -355,3 +355,310 @@ build-ksuinit / build: .github#39
 - "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
 build-ksuinit / build: .github#1
 
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36284773668
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+✓ generate-key in 6s (ID 108523325335)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+X build-ksuinit / build in 9s (ID 108523325497)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  X Build ksuinit
+  - Upload ksuinit artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108523344892)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108523345839)
+- build-ksud in 0s (ID 108523352405)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+X Process completed with exit code 101.
+build-ksuinit / build: .github#39
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build-ksuinit / build: .github#1
+
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36284773668
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+✓ generate-key in 6s (ID 108523325335)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+X build-ksuinit / build in 9s (ID 108523325497)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  X Build ksuinit
+  - Upload ksuinit artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108523344892)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108523345839)
+- build-ksud in 0s (ID 108523352405)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+X Process completed with exit code 101.
+build-ksuinit / build: .github#39
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build-ksuinit / build: .github#1
+
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36284773668
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+✓ generate-key in 6s (ID 108523325335)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+X build-ksuinit / build in 9s (ID 108523325497)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  X Build ksuinit
+  - Upload ksuinit artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108523344892)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108523345839)
+- build-ksud in 0s (ID 108523352405)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+X Process completed with exit code 101.
+build-ksuinit / build: .github#39
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build-ksuinit / build: .github#1
+
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36284773668
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+✓ generate-key in 6s (ID 108523325335)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+X build-ksuinit / build in 9s (ID 108523325497)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  X Build ksuinit
+  - Upload ksuinit artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108523344892)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108523345839)
+- build-ksud in 0s (ID 108523352405)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+X Process completed with exit code 101.
+build-ksuinit / build: .github#39
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build-ksuinit / build: .github#1
+
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36284773668
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+✓ generate-key in 6s (ID 108523325335)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+X build-ksuinit / build in 9s (ID 108523325497)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  X Build ksuinit
+  - Upload ksuinit artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108523344892)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108523345839)
+- build-ksud in 0s (ID 108523352405)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+X Process completed with exit code 101.
+build-ksuinit / build: .github#39
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build-ksuinit / build: .github#1
+
+X pin-410 Build Manager · 36284773668
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+✓ generate-key in 6s (ID 108523325335)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+X build-ksuinit / build in 9s (ID 108523325497)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  X Build ksuinit
+  - Upload ksuinit artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build-manager (normal, release) in 4m33s (ID 108523344892)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  ✓ Build APK
+  ✓ Upload artifact
+  ✓ Upload mappings
+  ✓ Post Setup Gradle
+  ✓ Post Setup Java
+  ✓ Post Checkout
+  ✓ Complete job
+- build-lkm (ID 108523345839)
+- build-ksud in 0s (ID 108523352405)
+X upload-telegram (ID 108523994505)
+X repack-manager (ID 108523994708)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+X Process completed with exit code 101.
+build-ksuinit / build: .github#39
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build-ksuinit / build: .github#1
+
