@@ -44,8 +44,15 @@ jobs:
       run: |
         # The artifact keeps whatever path upload-artifact chose as its root, so locate the
         # binary instead of guessing the layout ("ksuinit/*/release/ksuinit" matched nothing).
-        KSUINIT=$(find ksuinit -type f -name ksuinit | head -n 1)
-        test -n "$KSUINIT"
+        # The artifact unpacks to an unknown depth: with `path` unset the downloader may or
+        # may not wrap it in a directory named after the artifact.
+        KSUINIT=$(find . -maxdepth 4 -type f -name ksuinit | head -n 1)
+        if [ -z "$KSUINIT" ]; then
+          echo "::error::ksuinit binary not found after download; candidates:"
+          find . -maxdepth 4 -name 'ksuinit*' | head -20
+          exit 1
+        fi
+        echo "using $KSUINIT"
         cp -f "$KSUINIT" ./userspace/ksud/bin/aarch64/
      
     - name: Setup Rust toolchain
