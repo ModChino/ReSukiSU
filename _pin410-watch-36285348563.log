@@ -1,0 +1,1028 @@
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+* build-ksuinit / build (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  * Build ksuinit
+  * Upload ksuinit artifact
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v7
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+* build-ksuinit / build (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+* build-ksud (x86_64-linux-android, ubuntu-latest) / build (ID 108525055380)
+* build-ksud (aarch64-linux-android, ubuntu-latest) / build (ID 108525055410)
+* build-ksud (armv7-linux-androideabi, ubuntu-latest) / build (ID 108525055422)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+* build-ksud (x86_64-linux-android, ubuntu-latest) / build (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  * Setup Rust toolchain
+  * Run Swatinem/rust-cache@v2
+  * Setup cargo-ndk
+  * Build ksud
+  * Upload ksud artifact
+  * Post Run actions/checkout@v7
+* build-ksud (aarch64-linux-android, ubuntu-latest) / build (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  * Setup Rust toolchain
+  * Run Swatinem/rust-cache@v2
+  * Setup cargo-ndk
+  * Build ksud
+  * Upload ksud artifact
+  * Post Run actions/checkout@v7
+* build-ksud (armv7-linux-androideabi, ubuntu-latest) / build (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  * Setup Rust toolchain
+  * Run Swatinem/rust-cache@v2
+  * Setup cargo-ndk
+  * Build ksud
+  * Upload ksud artifact
+  * Post Run actions/checkout@v7
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+* build-ksud (x86_64-linux-android, ubuntu-latest) / build (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  * Setup cargo-ndk
+  * Build ksud
+  * Upload ksud artifact
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v7
+* build-ksud (aarch64-linux-android, ubuntu-latest) / build (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  * Setup cargo-ndk
+  * Build ksud
+  * Upload ksud artifact
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v7
+* build-ksud (armv7-linux-androideabi, ubuntu-latest) / build (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  * Setup cargo-ndk
+  * Build ksud
+  * Upload ksud artifact
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v7
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+X build-ksud (x86_64-linux-android, ubuntu-latest) / build in 47s (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (aarch64-linux-android, ubuntu-latest) / build in 49s (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (armv7-linux-androideabi, ubuntu-latest) / build in 49s (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+X build-ksud (x86_64-linux-android, ubuntu-latest) / build in 47s (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (aarch64-linux-android, ubuntu-latest) / build in 49s (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (armv7-linux-androideabi, ubuntu-latest) / build in 49s (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+X build-ksud (x86_64-linux-android, ubuntu-latest) / build in 47s (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (aarch64-linux-android, ubuntu-latest) / build in 49s (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (armv7-linux-androideabi, ubuntu-latest) / build in 49s (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+X build-ksud (x86_64-linux-android, ubuntu-latest) / build in 47s (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (aarch64-linux-android, ubuntu-latest) / build in 49s (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (armv7-linux-androideabi, ubuntu-latest) / build in 49s (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+X build-ksud (x86_64-linux-android, ubuntu-latest) / build in 47s (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (aarch64-linux-android, ubuntu-latest) / build in 49s (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (armv7-linux-androideabi, ubuntu-latest) / build in 49s (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+X build-ksud (x86_64-linux-android, ubuntu-latest) / build in 47s (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (aarch64-linux-android, ubuntu-latest) / build in 49s (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (armv7-linux-androideabi, ubuntu-latest) / build in 49s (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+X build-ksud (x86_64-linux-android, ubuntu-latest) / build in 47s (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (aarch64-linux-android, ubuntu-latest) / build in 49s (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (armv7-linux-androideabi, ubuntu-latest) / build in 49s (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* build-manager (normal, release) (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  * Build APK
+  * Upload artifact
+  * Upload mappings
+  * Post Setup Gradle
+  * Post Setup Java
+  * Post Checkout
+- build-lkm (ID 108524965692)
+X build-ksud (x86_64-linux-android, ubuntu-latest) / build in 47s (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (aarch64-linux-android, ubuntu-latest) / build in 49s (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (armv7-linux-androideabi, ubuntu-latest) / build in 49s (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
+X pin-410 Build Manager · 36285348563
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+✓ generate-key in 5s (ID 108524947682)
+  ✓ Set up job
+  ✓ Generate temporary keystore
+  ✓ Extract certificate hash and size
+  ✓ Complete job
+✓ build-ksuinit / build in 43s (ID 108524947830)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Setup rustup
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Build ksuinit
+  ✓ Upload ksuinit artifact
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build-manager (normal, release) in 3m39s (ID 108524964866)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Determine commit for build
+  ✓ Determine manager variant
+  - Run randomizer
+  ✓ Write key
+  ✓ Write PR key
+  ✓ Setup Java
+  ✓ Setup Gradle
+  ✓ Setup Android SDK
+  ✓ Build APK
+  ✓ Upload artifact
+  ✓ Upload mappings
+  ✓ Post Setup Gradle
+  ✓ Post Setup Java
+  ✓ Post Checkout
+  ✓ Complete job
+- build-lkm (ID 108524965692)
+X build-ksud (x86_64-linux-android, ubuntu-latest) / build in 47s (ID 108525055380)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (aarch64-linux-android, ubuntu-latest) / build in 49s (ID 108525055410)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+X build-ksud (armv7-linux-androideabi, ubuntu-latest) / build in 49s (ID 108525055422)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Download artifacts
+  - Prepare LKM fies
+  ✓ Prepare ksuinit
+  ✓ Setup Rust toolchain
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Setup cargo-ndk
+  X Build ksud
+  - Upload ksud artifact
+  - Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+- repack-manager (ID 108525491003)
+- upload-telegram (ID 108525491538)
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+generate-key: .github#1
+
