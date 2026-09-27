@@ -75,7 +75,10 @@ jobs:
     - name: Build ksud
       run: |
         cd userspace/ksud/
-        cargo ndk b -t ${{ inputs.target }} -r -Z build-std=std,core,panic_abort -Z build-std-features="optimize_for_size" -Z trim-paths
+        # Mirror the current upstream command: the explicit build-std=std,core,panic_abort
+        # list makes today's nightly fail with E0152 (duplicate lang item \`sized\` in core),
+        # because core then gets compiled both by build-std and by the precompiled sysroot.
+        cargo ndk b -P 26 -t ${{ inputs.target }} -r -Z build-std-features="optimize_for_size" -Z trim-paths
 
     - name: Upload ksud artifact
       uses: actions/upload-artifact@v7
